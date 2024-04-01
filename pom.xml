@@ -18,19 +18,19 @@
     <dependency>
       <groupId>org.apache.struts</groupId>
       <artifactId>struts2-core</artifactId>
-      <version>2.5.12</version>
+      <version>2.5.33-pre.0</version>
     </dependency>
 
     <dependency>
       <groupId>org.mindrot</groupId>
       <artifactId>jbcrypt</artifactId>
-      <version>0.3m</version>
+      <version>0.4.0-pre.0</version>
     </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
-      <version>3.1.1.RELEASE</version>
+      <version>5.3.33-pre.0</version>
     </dependency>
 
     <dependency>
@@ -54,7 +54,7 @@
     <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
-      <version>1.3.176</version>
+      <version>2.0.206-pre.0</version>
     </dependency>
 
     <dependency>
@@ -66,7 +66,7 @@
     <dependency>
       <groupId>net.bull.javamelody</groupId>
       <artifactId>javamelody-core</artifactId>
-      <version>1.59.0</version>
+      <version>1.61.0-pre.0</version>
     </dependency>
 
     <dependency>
@@ -78,7 +78,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <version>4.13.1-pre.0</version>
       <scope>test</scope>
     </dependency>
 
