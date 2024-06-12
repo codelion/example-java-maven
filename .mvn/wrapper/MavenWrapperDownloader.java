@@ -48,11 +48,16 @@ public class MavenWrapperDownloader {
      */
     private static final String PROPERTY_NAME_WRAPPER_URL = "wrapperUrl";
 
+    /**
+     * Main method to start the downloader program.
+     * 
+     * @param args The arguments passed to the program, expects the base directory path as the first argument.
+     */
     public static void main(String args[]) {
         System.out.println("- Downloader started");
         File baseDirectory = new File(args[0]);
         System.out.println("- Using base directory: " + baseDirectory.getAbsolutePath());
-
+    
         // If the maven-wrapper.properties exists, read it and check if it contains a custom
         // wrapperUrl parameter.
         File mavenWrapperPropertyFile = new File(baseDirectory, MAVEN_WRAPPER_PROPERTIES_PATH);
@@ -77,7 +82,7 @@ public class MavenWrapperDownloader {
             }
         }
         System.out.println("- Downloading from: : " + url);
-
+    
         File outputFile = new File(baseDirectory.getAbsolutePath(), MAVEN_WRAPPER_JAR_PATH);
         if(!outputFile.getParentFile().exists()) {
             if(!outputFile.getParentFile().mkdirs()) {
@@ -97,10 +102,16 @@ public class MavenWrapperDownloader {
         }
     }
 
+    /**
+     * Downloads a file from the given URL and saves it to the specified destination file.
+     * 
+     * @param urlString the URL of the file to download
+     * @param destination the destination File where the downloaded file will be saved
+     * @throws Exception if there is an error during the download process
+     */
     private static void downloadFileFromURL(String urlString, File destination) throws Exception {
         URL website = new URL(urlString);
-        ReadableByteChannel rbc;
-        rbc = Channels.newChannel(website.openStream());
+        ReadableByteChannel rbc = Channels.newChannel(website.openStream());
         FileOutputStream fos = new FileOutputStream(destination);
         fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
         fos.close();

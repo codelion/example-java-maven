@@ -15,17 +15,21 @@ public class BCryptTest {
    */
   @Test
   public void testInternationalChars() {
-    System.out.print("BCrypt.hashpw w/ international chars: ");
-    String pw1 = "ππππππππ";
-    String pw2 = "????????";
-
-    String h1 = BCrypt.hashpw(pw1, BCrypt.gensalt());
-    assertFalse(BCrypt.checkpw(pw2, h1));
-    System.out.print(".");
-
-    String h2 = BCrypt.hashpw(pw2, BCrypt.gensalt());
-    assertFalse(BCrypt.checkpw(pw1, h2));
-    System.out.print(".");
-    System.out.println("");
+      System.out.print("BCrypt.hashpw w/ international chars: ");
+  
+      // Non-US-ASCII passwords for testing
+      String pw1 = "ππππππππ";
+      String pw2 = "????????";
+  
+      // Hashing the first password
+      String h1 = BCrypt.hashpw(pw1, BCrypt.gensalt());
+      assertFalse(BCrypt.checkpw(pw2, h1));
+      System.out.print(".");
+  
+      // Hashing the second password
+      String h2 = BCrypt.hashpw(pw2, BCrypt.gensalt());
+      assertFalse(BCrypt.checkpw(pw1, h2));
+      System.out.print(".");
+      System.out.println("");
   }
 }
